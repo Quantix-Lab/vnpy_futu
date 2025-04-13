@@ -1,5 +1,7 @@
 # VeighNa Futu Gateway
 
+[English](README.md) | [简体中文](README_CN.md)
+
 富途证券交易接口，基于富途开放平台（Futu OpenAPI）开发。
 
 ## 免责声明

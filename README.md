@@ -1,5 +1,7 @@
 # VeighNa Futu Gateway
 
+[English](README.md) | [简体中文](README_CN.md)
+
 Futu Securities trading gateway for VeighNa trading framework, developed based on Futu Open API.
 
 ## Disclaimer
