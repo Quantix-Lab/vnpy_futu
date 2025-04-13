@@ -2,6 +2,16 @@
 
 [English](README.md) | [简体中文](README_CN.md)
 
+[![License](https://img.shields.io/github/license/Quantix-Lab/vnpy_futu)](https://github.com/Quantix-Lab/vnpy_futu/blob/main/LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/Quantix-Lab/vnpy_futu)](https://github.com/Quantix-Lab/vnpy_futu/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/Quantix-Lab/vnpy_futu)](https://github.com/Quantix-Lab/vnpy_futu/network/members)
+[![Python Version](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/)
+[![GitHub Issues](https://img.shields.io/github/issues/Quantix-Lab/vnpy_futu)](https://github.com/Quantix-Lab/vnpy_futu/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/Quantix-Lab/vnpy_futu)](https://github.com/Quantix-Lab/vnpy_futu/pulls)
+[![PyPI Version](https://img.shields.io/badge/pypi-v1.0.0-blue)](https://pypi.org/project/vnpy-futu/)
+[![Last Commit](https://img.shields.io/github/last-commit/Quantix-Lab/vnpy_futu)](https://github.com/Quantix-Lab/vnpy_futu/commits/main)
+[![Documentation Status](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://www.vnpy.com/docs)
+
 Futu Securities trading gateway for VeighNa trading framework, developed based on Futu Open API.
 
 ## Disclaimer
