@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vnpy_futu"
+version = "1.0.0"
+authors = [
+    {name = "VeighNa Team", email = "support@vnpy.com"},
+]
+description = "Futu Securities gateway for VeighNa framework"
+readme = "README.md"
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.7"
+dependencies = [
+    "futu-api",
+    "vnpy",
+]
+
+[project.urls]
+Homepage = "https://github.com/vnpy/vnpy_futu"
+Documentation = "https://www.vnpy.com/docs"
+Repository = "https://github.com/vnpy/vnpy_futu"
