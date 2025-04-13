@@ -1,5 +1,5 @@
 """
-使用富途网关下载历史数据的示例
+使用富途接口下载历史数据的示例
 """
 
 import sys
@@ -16,7 +16,7 @@ from vnpy.trader.object import (
 )
 from vnpy.trader.utility import load_json, save_json
 
-# 导入富途网关
+# 导入富途接口
 from vnpy_futu import FutuGateway
 
 
@@ -28,10 +28,10 @@ def run():
     event_engine = EventEngine()
     main_engine = MainEngine(event_engine)
 
-    # 添加富途网关
+    # 添加富途接口
     main_engine.add_gateway(FutuGateway)
 
-    # 连接富途网关
+    # 连接富途接口
     main_engine.connect({
         "gateway_name": "FUTU",
         "API地址": "127.0.0.1",

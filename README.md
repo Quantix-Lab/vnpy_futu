@@ -1,65 +1,68 @@
 # VeighNa Futu Gateway
 
-富途证券交易接口，基于富途开放平台（Futu OpenAPI）开发。
+Futu Securities trading gateway for VeighNa trading framework, developed based on Futu Open API.
 
-## 说明
+## Disclaimer
 
-本模块基于富途开放平台提供的API接口开发，支持以下功能：
+This software is provided for educational and research purposes only and does not constitute investment or trading advice. Users assume all risks associated with real-money trading using this software. The developers of this software bear no responsibility for any direct or indirect losses resulting from the use of this software.
 
-1. 港股、美股、A股的行情数据订阅和拉取
-2. 港股、美股、A股的委托下单和成交查询
-3. 账户资金和持仓信息的查询
-4. 历史K线数据的获取
+By using this software, you agree that:
+1. You will assume all risks and consequences of using this software for trading
+2. Any issues with the software (including but not limited to errors, delays, etc.) may lead to trading losses
+3. You fully understand the risks of financial markets and have appropriate risk tolerance capacity
 
-## 安装前准备
+## Overview
 
-使用该接口前需要先安装并运行富途牛牛客户端，并在客户端中：
+This module is developed based on the API provided by Futu OpenAPI platform and supports the following features:
 
-1. 登录您的富途账户
-2. 启用OpenAPI功能（点击客户端右上角齿轮图标 > 选择其他 > 勾选启用OpenAPI）
-3. 记录您的API地址和端口（默认为127.0.0.1和11111）
+1. Market data subscription and retrieval for Hong Kong, US, and A-share stocks
+2. Order placement and trade execution for Hong Kong, US, and A-share stocks
+3. Account balance and position information queries
+4. Historical K-line data retrieval
 
-## 安装
+## Prerequisites
 
-安装环境推荐基于3.7以上版本的【纯净版】Python环境，避免使用Anaconda那些版本会有一些兼容性问题。
+Before using this gateway, you need to install and run the Futu Bullish (FutuNiuNiu) client and:
 
-### 方法1：使用pip直接安装
+1. Log in to your Futu account
+2. Enable the OpenAPI function (click the gear icon in the upper right corner > select "Others" > check "Enable OpenAPI")
+3. Note your API address and port (default is 127.0.0.1 and 11111)
+
+## Installation
+
+We recommend using a clean Python environment based on version 3.7 or higher, avoiding Anaconda distributions as they may cause compatibility issues.
+
+### Installation from Source Code
 
 ```bash
-pip install vnpy_futu
-```
-
-### 方法2：下载源代码安装
-
-```bash
-git clone https://github.com/vnpy/vnpy_futu.git
+git clone https://github.com/Quantix-Lab/vnpy_futu.git
 cd vnpy_futu
 pip install -e .
 ```
 
-### 依赖安装
+### Dependencies
 
-本模块自动安装以下依赖项：
+This module only depends on:
 
-- futu-api：富途开放平台的Python SDK
-- vnpy_trader：VeighNa核心交易模块
+- futu-api: The Python SDK for Futu OpenAPI platform
 
-## 使用指南
+**Note:** This module does not automatically install the VeighNa core library, which needs to be installed by the user separately. This design avoids dependency conflicts and allows users to flexibly choose the VeighNa version that suits their environment.
 
-### 在VeighNa Trader中使用
+## Usage Guide
 
-启动VeighNa Trader后，在主界面点击【交易】菜单栏的【连接富途】，在弹出的窗口中输入以下参数后即可登录：
+### Using in VeighNa Trader
 
-- API地址：富途API服务器地址，默认为127.0.0.1
-- API端口：富途API服务器端口，默认为11111
-- 市场环境：正式环境或模拟环境
-- 牛牛账号：富途牛牛账号
-- 密码：账号密码
-- 客户号：客户号，默认为1
-- 交易服务器：可选择港股、美股、A股，可多选
-- 行情服务器：行情服务器地址，可留空
+After launching VeighNa Trader, click the [Trade] menu and select [Connect Futu]. Enter the following parameters in the popup window to log in:
 
-### 直接通过代码使用
+- API Address: Futu API server address, default is 127.0.0.1
+- API Port: Futu API server port, default is 11111
+- Market Environment: Real environment or simulation environment
+- Trading Gateway: Select Hong Kong, US, or A-shares stocks, multiple selections allowed
+- Quote Server: Quote server address, can be left empty
+
+**Note:** You do not need to enter your username and password in VeighNa as authentication is handled through the Futu Bullish client. Please ensure that the Futu Bullish client is logged in and the OpenAPI function is enabled.
+
+### Direct Code Usage
 
 ```python
 from vnpy.event import EventEngine
@@ -70,7 +73,7 @@ from vnpy_futu import FutuGateway
 
 
 def main():
-    """主入口函数"""
+    """Main entry function"""
     qapp = create_qapp()
 
     event_engine = EventEngine()
@@ -87,42 +90,54 @@ if __name__ == "__main__":
     main()
 ```
 
-### 示例程序
+### Example Programs
 
-在`examples`目录下提供了以下示例程序：
+The following example programs are provided in the `examples` directory:
 
-1. `futu_stock_trading.py`: 演示如何使用API进行股票交易
-2. `futu_data_download.py`: 演示如何下载历史数据
-3. `futu_trader_ui.py`: 演示如何启动图形界面
+1. `futu_stock_trading.py`: Demonstrates how to use the API for stock trading
+2. `futu_data_download.py`: Demonstrates how to download historical data
+3. `futu_trader_ui.py`: Demonstrates how to launch the graphical interface
 
-运行示例前确保富途牛牛客户端已启动并开启了OpenAPI功能。
+Make sure the Futu Bullish client is running and the OpenAPI function is enabled before running the examples.
 
-## 常见问题
+## Common Issues
 
-### 1. 连接失败
+### 1. Connection Failure
 
-确保富途牛牛客户端已启动并开启了OpenAPI功能，API地址和端口配置正确。
+Ensure that the Futu Bullish client is running with the OpenAPI function enabled, and the API address and port are configured correctly.
 
-### 2. 订阅行情失败
+### 2. Market Data Subscription Failure
 
-检查您的富途账户是否有相应市场的行情权限，可能需要在富途牛牛客户端中购买相应的行情数据权限。
+Check if your Futu account has market data permissions for the relevant markets. You may need to purchase market data subscriptions in the Futu Bullish client.
 
-### 3. 交易失败
+### 3. Trading Failure
 
-- 检查账户是否有足够的资金
-- 确认您的账户是否有交易权限
-- 验证交易时间是否在目标市场的交易时段内
+- Check if your account has sufficient funds
+- Confirm if your account has trading permissions
+- Verify if the trading time is within the trading hours of the target market
 
-## 开发者文档
+## Developer Documentation
 
-如需了解模块的详细API文档和开发指南，请访问[VeighNa官方文档](https://www.vnpy.com/docs)。
+For detailed API documentation and development guidelines, please visit [VeighNa Official Documentation](https://www.vnpy.com/docs).
 
-## 相关链接
+## Useful Links
 
-- [VeighNa官网](https://www.vnpy.com)
-- [富途开放平台](https://openapi.futunn.com/)
-- [富途API文档](https://openapi.futunn.com/futu-api-doc/)
+- [VeighNa Official Website](https://www.vnpy.com)
+- [Futu Open Platform](https://openapi.futunn.com/)
+- [Futu API Documentation](https://openapi.futunn.com/futu-api-doc/)
 
-## 版权说明
+## License
 
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for the complete license text.
+
+```
 MIT License
+
+Copyright (c) 2025 Quantix-Lab
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions...

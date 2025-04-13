@@ -1,5 +1,5 @@
 """
-富途网关单元测试
+富途接口单元测试
 """
 
 import unittest
@@ -15,7 +15,7 @@ from vnpy_futu.vnpy_futu.futu_gateway import FutuQuoteApi, FutuTradeApi
 
 class TestFutuGateway(unittest.TestCase):
     """
-    测试富途网关
+    测试富途接口
     """
 
     def setUp(self):

@@ -14,7 +14,7 @@ try:
     from vnpy.trader.engine import MainEngine
     from vnpy.trader.ui import MainWindow, create_qapp
 
-    # 导入富途网关
+    # 导入富途接口
     from vnpy_futu.vnpy_futu import FutuGateway
 except ImportError as e:
     print(f"导入错误: {e}")
@@ -27,7 +27,7 @@ except ImportError as e:
         from vnpy.trader.engine import MainEngine
         from vnpy.trader.ui import MainWindow, create_qapp
 
-        # 直接从相对路径导入富途网关
+        # 直接从相对路径导入富途接口
         from vnpy_futu.vnpy_futu.futu_gateway import FutuGateway
         print("成功通过直接路径导入模块")
     except ImportError as e2:
@@ -52,16 +52,16 @@ def main():
         # 创建主引擎
         main_engine = MainEngine(event_engine)
 
-        # 添加富途网关
+        # 添加富途接口
         main_engine.add_gateway(FutuGateway)
-        print("成功添加富途网关")
+        print("成功添加富途接口")
 
         # 创建并显示主窗口
         main_window = MainWindow(main_engine, event_engine)
         main_window.showMaximized()
         print("成功启动VeighNa交易平台界面")
 
-        # 在富途网关连接设置中：
+        # 在富途接口连接设置中：
         # - API地址: 127.0.0.1
         # - API端口: 11111
         # - 市场环境: 模拟环境或正式环境
